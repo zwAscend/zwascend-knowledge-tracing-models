@@ -32,6 +32,7 @@ source ~/ms-env/bin/activate
 Recommended packages:
 
 ```bash
+pip install -U fastapi uvicorn pydantic
 pip install -U numpy pandas
 ```
 
@@ -300,4 +301,10 @@ python src/eval.py
 
 # Run a simple inference demo
 python src/infer.py
+
+# Run API
+uvicorn src.api:app --host 0.0.0.0 --port 8000
+
+# Healthy check
+curl -s http://localhost:8000/health
 ```
